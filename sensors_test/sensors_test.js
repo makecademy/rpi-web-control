@@ -26,11 +26,11 @@ var sense = new TSL2561({
 });
 
 function sensRead() {
-        setTimeout(function() {
-            sense.getLux(function(err, val) {
-                console.log('light value is: ' + val + ' lux');
-            });
-        }, 1000);
+    setInterval(function() {
+        sense.getLux(function(err, val) {
+            console.log('light value is: ' + val + ' lux');
+        });
+    }, 1000);
 }
 
 sense.init(function(err, val) {
