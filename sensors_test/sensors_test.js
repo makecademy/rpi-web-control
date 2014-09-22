@@ -27,13 +27,13 @@ var sense = new TSL2561({
 
 function sensRead() {
         setTimeout(function() {
-            sens.getLux(function(err, val) {
+            sense.getLux(function(err, val) {
                 console.log('light value is: ' + val + ' lux');
             });
         }, 1000);
 }
 
-sens.init(function(err, val) {
+sense.init(function(err, val) {
     if (err) {
         console.log('Error on sensor init: ' + err);
     } else {
