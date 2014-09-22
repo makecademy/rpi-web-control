@@ -22,7 +22,9 @@ if (dht_sensor.initialize()) {
 }
 
 var sense = new TSL2561({
-    'address': '0x29'
+    'address': '0x29',
+    'timingMode': '101ms',
+    'gainMode': '0'
 });
 
 function sensRead() {
@@ -34,7 +36,7 @@ function sensRead() {
                 console.log('light value is: ' + val + ' lux')
             }
         });
-    }, 5000);
+    }, 1000);
 }
 
 sense.init(function(err, val) {
