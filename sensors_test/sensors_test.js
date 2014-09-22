@@ -24,7 +24,7 @@ if (dht_sensor.initialize()) {
 var sense = new TSL2561({
     'address': '0x29',
     'timingMode': '101ms',
-    'gainMode': 'auto'
+    'gainMode': '1'
 });
 
 function sensRead() {
