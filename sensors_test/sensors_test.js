@@ -1,4 +1,14 @@
 var sensorLib = require('node-dht-sensor');
+var TSL2561 = require('sensor_tsl2561');
+
+var sense = new TSL2561();
+sense.init(function(err, val) {
+  if (!err) {
+    sense.getLux(function(error, val) {
+      if (!error) console.log(val + ' lux');
+    });    
+  }
+});
 
 var sensor = {
     initialize: function () {
