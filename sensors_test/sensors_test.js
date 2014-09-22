@@ -23,14 +23,14 @@ if (dht_sensor.initialize()) {
 
 var sense = new TSL2561({
     'address': '0x29',
-    'packageType': 'CS'
+    'powerMode': 'powerDown'
 });
 
 function sensRead() {
     setInterval(function() {
         sense.getLux(function(err, val) {
             if (err) {
-                console.log('Error on sensor init: ' + err);
+                console.log(err);
             } else {
                 console.log('light value is: ' + val + ' lux')
             }
