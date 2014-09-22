@@ -25,10 +25,19 @@ var sense = new TSL2561({
     'address': '0x29'
 });
 
-sense.init(function(err, val) {
-  if (!err) {
-    sense.getLux(function(error, val) {
-      if (!error) console.log(val + ' lux');
-    });    
-  }
+function sensRead() {
+        setTimeout(function() {
+            sens.getLux(function(err, val) {
+                console.log('light value is: ' + val + ' lux');
+            });
+        }, 1000);
+}
+
+sens.init(function(err, val) {
+    if (err) {
+        console.log('Error on sensor init: ' + err);
+    } else {
+        console.log('Sensor init completed');
+        sensRead();
+    }
 });
