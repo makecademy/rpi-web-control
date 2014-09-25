@@ -6,12 +6,6 @@ var piREST = require('pi-arest')(app);
 piREST.set_id('1');
 piREST.set_name('my_RPi');
 
-app.get('/', function(req, res){
-  
-  res.send("Welcome to the home page");
-
-});
-
 var dht_sensor = {
     initialize: function () {
         return sensorLib.initialize(11, 4);
