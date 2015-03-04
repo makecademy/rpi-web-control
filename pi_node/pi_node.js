@@ -43,7 +43,6 @@ if (dht_sensor.initialize()) {
     console.warn('Failed to initialize sensor');
 }
 
-// Start server
-var server = app.listen(80, function() {
+var server = app.listen(3000, function() {
     console.log('Listening on port %d', server.address().port);
 });
